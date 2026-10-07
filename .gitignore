@@ -1,0 +1,7 @@
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+catboost_info/
+.DS_Store
+Thumbs.db
