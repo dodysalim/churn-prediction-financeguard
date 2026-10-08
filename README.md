@@ -142,4 +142,4 @@ End-to-end churn prediction project on 10,000 bank customers. Gradient boosting 
 
 **Dody Dueñas Remache**: Data Analyst / Data Scientist Jr. · Ecuador 🇪🇨
 
-[LinkedIn](https://www.linkedin.com/in/dody-duenas/) · [Portafolio](https://dodysalim.github.io/xd/portfolio/) · [GitHub](https://github.com/dodysalim) · [dodydurema67@gmail.com](mailto:dodydurema67@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/dody-duenas/) · [Portafolio](https://dodysalim.github.io/) · [GitHub](https://github.com/dodysalim) · [dodydurema67@gmail.com](mailto:dodydurema67@gmail.com)
