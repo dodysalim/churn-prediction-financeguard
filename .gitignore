@@ -5,3 +5,9 @@ venv/
 catboost_info/
 .DS_Store
 Thumbs.db
+
+# Mantenimiento
+*.py[cod]
+.env
+.pytest_cache/
+*.log

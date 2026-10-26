@@ -12,6 +12,10 @@
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas"> <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="scikit-learn"> <img src="https://img.shields.io/badge/XGBoost-1F6FEB?style=flat-square&logoColor=white" alt="XGBoost"> <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter"> <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logoColor=black" alt="Power BI">
 </p>
 
+<p align="center">
+<a href="https://github.com/dodysalim/churn-prediction-financeguard/actions"><img src="https://github.com/dodysalim/churn-prediction-financeguard/actions/workflows/tests.yml/badge.svg" alt="CI"></a> <img src="https://img.shields.io/badge/versión-1.1.0-8F7BFF?style=flat-square" alt="Versión 1.1.0"> <img src="https://img.shields.io/badge/licencia-MIT-30405B?style=flat-square" alt="Licencia MIT">
+</p>
+
 <p align="center"><a href="https://dodysalim.github.io/"><b>🌐 Portafolio</b></a> · <a href="docs/PORTFOLIO_CASE.md"><b>📄 Caso de estudio</b></a> · <a href="docs/VALIDATION.md"><b>✅ Verificación</b></a></p>
 
 ---
@@ -68,10 +72,16 @@ Dataset Churn_Modelling incluido, con 10.000 registros. Abre los notebooks desde
 | [notebooks/](notebooks/) | EDA, modelos, segmentación y costos |
 | [data/Churn_Modelling.csv](data/Churn_Modelling.csv) | Datos académicos originales |
 | [images/](images/) | Figuras publicadas |
+| [tests/](tests/) | Pruebas de datos y notebooks |
 
 ## ✅ Calidad y alcance
 
-Notebook 1 (EDA y regresión logística) ejecutado completo: 20 celdas de código sin errores. Código de los otros notebooks revisado sintácticamente y dataset comprobado. Las métricas históricas publicadas pertenecen a las ejecuciones guardadas; no se reentrenó el stacking en esta revisión.
+Los 4 notebooks se ejecutan completos sin errores (verificado el 26-10-2026 con las versiones de `requirements.txt`). Las pruebas automáticas comprueban el dataset y ejecutan los notebooks 1 y 4 en cada cambio:
+
+```bash
+python -m pip install pytest nbclient ipykernel
+python -m pytest tests -q
+```
 
 La retención y el ROI son escenarios con supuestos, no ingresos recuperados observados. El dashboard Power BI analiza Exited observado, no probabilidades nuevas del modelo.
 
