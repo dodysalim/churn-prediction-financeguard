@@ -1,24 +1,42 @@
-![FinanceGuard](docs/cover.svg)
+<p align="center"><img src="https://dodysalim.github.io/assets/project-covers/m4.webp" alt="FinanceGuard" width="100%"></p>
 
-# FinanceGuard
+<h1 align="center">FinanceGuard</h1>
 
-**Modelos y escenarios económicos para estudiar abandono de clientes bancarios.**
+<p align="center"><b>Modelos y escenarios económicos para anticipar el abandono de clientes bancarios.</b></p>
 
-HENRY · MÓDULO 4 · PROYECTO INTEGRADOR · Python · scikit-learn · Stacking · Power BI
+<p align="center">
+<img src="https://img.shields.io/badge/Henry_%C2%B7_M%C3%B3dulo_4_%C2%B7_Proyecto_integrador-75E6CE?style=for-the-badge&labelColor=0b1222" alt="Henry · Módulo 4 · Proyecto integrador">
+</p>
 
-[Portafolio](https://dodysalim.github.io/) · [Caso y alcance](docs/PORTFOLIO_CASE.md) · [Verificación](docs/VALIDATION.md)
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas"> <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="scikit-learn"> <img src="https://img.shields.io/badge/XGBoost-1F6FEB?style=flat-square&logoColor=white" alt="XGBoost"> <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter"> <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logoColor=black" alt="Power BI">
+</p>
 
-## La pregunta
+<p align="center"><a href="https://dodysalim.github.io/"><b>🌐 Portafolio</b></a> · <a href="docs/PORTFOLIO_CASE.md"><b>📄 Caso de estudio</b></a> · <a href="docs/VALIDATION.md"><b>✅ Verificación</b></a></p>
+
+---
+
+## 📌 Resumen en 30 segundos
+
+| | |
+| --- | --- |
+| **🎯 Problema** | Comparar modelos de churn bancario y elegir un umbral que equilibre falsos positivos y costos de retención. |
+| **🛠️ Solución** | EDA, regresión logística, boosting y stacking; PCA y clustering para segmentar clientes. |
+| **📈 Entregables** | Matriz de costos, escenarios de retención y dashboard Power BI de 3 páginas. |
+| **🗂️ Datos** | Dataset Churn_Modelling: 10.000 clientes. |
+| **👤 Autor** | Dody Dueñas Remache. |
+
+## ❓ La pregunta de negocio
 
 ¿Cómo comparar modelos de churn y seleccionar un umbral considerando falsos positivos y costos de retención?
 
-## Qué puedes revisar
+## ✨ Qué incluye
 
 - EDA y regresión logística; comparación de boosting y stacking.
 - PCA, clustering y análisis de segmentos.
 - Matriz de costos y escenarios de retención; tres páginas Power BI.
 
-## Inicio local
+## 🚀 Cómo ejecutarlo
 
 Usa Python 3.11 o 3.12 en un entorno independiente. Desde la raíz:
 
@@ -35,15 +53,15 @@ Después de configurar los datos:
 python -m jupyter lab
 ```
 
-## Datos y configuración
+## 🗂️ Datos y configuración
 
 Dataset Churn_Modelling incluido, con 10.000 registros. Abre los notebooks desde la carpeta notebooks y sigue el orden numerado.
 
-## Power BI · PC y móvil
+## 📊 Power BI · PC y móvil
 
 [Archivos e instrucciones](powerbi/README.md). Descarga el repositorio completo y abre `powerbi/Abrir-PowerBI.bat` en Windows; después pulsa **Actualizar**. Incluye A4 horizontal a tamaño real (100 %) y diseño móvil vertical. El archivo `.pbip` necesita sus carpetas Report, SemanticModel y data.
 
-## Recorrido por el código
+## 🧭 Estructura del repositorio
 
 | Ruta | Qué contiene |
 | --- | --- |
@@ -51,14 +69,21 @@ Dataset Churn_Modelling incluido, con 10.000 registros. Abre los notebooks desde
 | [data/Churn_Modelling.csv](data/Churn_Modelling.csv) | Datos académicos originales |
 | [images/](images/) | Figuras publicadas |
 
-## Comprobación y alcance
+## ✅ Calidad y alcance
 
 Notebook 1 (EDA y regresión logística) ejecutado completo: 20 celdas de código sin errores. Código de los otros notebooks revisado sintácticamente y dataset comprobado. Las métricas históricas publicadas pertenecen a las ejecuciones guardadas; no se reentrenó el stacking en esta revisión.
 
 La retención y el ROI son escenarios con supuestos, no ingresos recuperados observados. El dashboard Power BI analiza Exited observado, no probabilidades nuevas del modelo.
 
-## Autoría
+## 👥 Autoría
 
 Proyecto integrador del módulo 4 de Henry, localizado en la carpeta M4. Dody Salim Dueñas Remache.
 
 [Documentación anterior](docs/ORIGINAL_README.md), conservada como referencia histórica.
+
+---
+
+<p align="center">
+<b>Dody Dueñas Remache</b> · Analista de Datos / Data Scientist<br>
+<a href="https://dodysalim.github.io/">Portafolio</a> · <a href="https://github.com/dodysalim">GitHub</a> · <a href="https://www.linkedin.com/in/dody-duenas/">LinkedIn</a> · <a href="mailto:dodydurema67@gmail.com">dodydurema67@gmail.com</a>
+</p>

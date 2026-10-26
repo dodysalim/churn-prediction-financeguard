@@ -1,0 +1,91 @@
+table Clientes
+
+	column 'CreditScore'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: CreditScore
+
+	column 'Geography'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Geography
+
+	column 'Gender'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Gender
+
+	column 'Age'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Age
+
+	column 'Tenure'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Tenure
+
+	column 'Balance'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Balance
+
+	column 'NumOfProducts'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: NumOfProducts
+
+	column 'HasCrCard'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: HasCrCard
+
+	column 'IsActiveMember'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: IsActiveMember
+
+	column 'EstimatedSalary'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: EstimatedSalary
+
+	column 'Exited'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Exited
+
+	column 'GrupoEdad'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: GrupoEdad
+
+	measure KPI_Clientes = COUNTROWS(Clientes)
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	measure KPI_Abandonos = SUM(Clientes[Exited])
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	measure KPI_TasaChurn = DIVIDE(SUM(Clientes[Exited]), COUNTROWS(Clientes))
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	measure KPI_Saldo = SUM(Clientes[Balance])
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	measure KPI_Salario = AVERAGE(Clientes[EstimatedSalary])
+		formatString: #,0.00
+		displayFolder: Indicadores
+
+	partition Clientes = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Clientes.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {{"CreditScore", type number}, {"Geography", type text}, {"Gender", type text}, {"Age", type number}, {"Tenure", type number}, {"Balance", type number}, {"NumOfProducts", type number}, {"HasCrCard", type number}, {"IsActiveMember", type number}, {"EstimatedSalary", type number}, {"Exited", type number}, {"GrupoEdad", type text}}, "en-US")
+				in
+				    Typed
