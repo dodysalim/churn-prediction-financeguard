@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/dodysalim/churn-prediction-financeguard/actions"><img src="https://github.com/dodysalim/churn-prediction-financeguard/actions/workflows/tests.yml/badge.svg" alt="CI"></a> <img src="https://img.shields.io/badge/versión-1.1.0-8F7BFF?style=flat-square" alt="Versión 1.1.0"> <img src="https://img.shields.io/badge/licencia-MIT-30405B?style=flat-square" alt="Licencia MIT">
+<a href="https://github.com/dodysalim/churn-prediction-financeguard/actions"><img src="https://github.com/dodysalim/churn-prediction-financeguard/actions/workflows/tests.yml/badge.svg" alt="CI"></a> <img src="https://img.shields.io/badge/versión-1.2.0-8F7BFF?style=flat-square" alt="Versión 1.2.0"> <img src="https://img.shields.io/badge/licencia-MIT-30405B?style=flat-square" alt="Licencia MIT">
 </p>
 
 <p align="center"><a href="https://dodysalim.github.io/"><b>🌐 Portafolio</b></a> · <a href="docs/PORTFOLIO_CASE.md"><b>📄 Caso de estudio</b></a> · <a href="docs/VALIDATION.md"><b>✅ Verificación</b></a></p>
@@ -57,6 +57,22 @@ Después de configurar los datos:
 python -m jupyter lab
 ```
 
+## ⚙️ Uso como paquete
+
+La lógica de los notebooks está disponible como paquete reutilizable en `src/financeguard/` (datos, features, modelos, evaluación y costos):
+
+```bash
+python train.py                          # comparación de modelos + umbral de negocio
+python train.py --models logistic xgboost
+```
+
+```python
+from financeguard import costs, data, features, models
+split = data.stratified_split(data.load_dataset())
+X_train, X_test, _ = features.fit_transform(split.X_train, split.X_test)
+model = models.build('xgboost_optimized', models.class_ratio(split.y_train)).fit(X_train, split.y_train)
+```
+
 ## 🗂️ Datos y configuración
 
 Dataset Churn_Modelling incluido, con 10.000 registros. Abre los notebooks desde la carpeta notebooks y sigue el orden numerado.
@@ -70,6 +86,8 @@ Dataset Churn_Modelling incluido, con 10.000 registros. Abre los notebooks desde
 | Ruta | Qué contiene |
 | --- | --- |
 | [notebooks/](notebooks/) | EDA, modelos, segmentación y costos |
+| [src/financeguard/](src/financeguard/) | Paquete reutilizable: datos, features, registro de modelos, evaluación y costos |
+| [train.py](train.py) | Entrenamiento y umbral de negocio desde la terminal |
 | [data/Churn_Modelling.csv](data/Churn_Modelling.csv) | Datos académicos originales |
 | [images/](images/) | Figuras publicadas |
 | [tests/](tests/) | Pruebas de datos y notebooks |
