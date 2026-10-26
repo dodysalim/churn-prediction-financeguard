@@ -81,6 +81,17 @@ Dataset Churn_Modelling incluido, con 10.000 registros. Abre los notebooks desde
 
 [Archivos e instrucciones](powerbi/README.md). Descarga el repositorio completo y abre `powerbi/Abrir-PowerBI.bat` en Windows; después pulsa **Actualizar**. Incluye A4 horizontal a tamaño real (100 %) y diseño móvil vertical. El archivo `.pbip` necesita sus carpetas Report, SemanticModel y data.
 
+## 🏗️ Arquitectura
+
+```mermaid
+flowchart LR
+    CSV[(Churn_Modelling.csv<br/>10.000 clientes)] --> D["data<br/>partición estratificada"] --> F["features<br/>escalado + one-hot (ajuste solo en train)"]
+    F --> M["models<br/>registro extensible"] --> E["evaluation<br/>AUC · AP · F1"]
+    M --> C["costs<br/>BusinessCosts → umbral óptimo"]
+    E & C --> T([train.py])
+    D -.-> NB([Notebooks 1-4])
+```
+
 ## 🧭 Estructura del repositorio
 
 | Ruta | Qué contiene |
